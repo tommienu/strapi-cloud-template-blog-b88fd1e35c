@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_recipe_instructions",
+  "info": {
+    "displayName": "Recipe Instruction",
+    "icon": "list",
+    "description": "Recipe instruction step (Google HowToStep schema compliant)"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

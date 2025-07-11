@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe",
+    "description": "Create and manage recipes with Google Recipe schema compliance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "site": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 160,
+      "required": true
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "datePublished": {
+      "type": "datetime"
+    },
+    "prepTime": {
+      "type": "string",
+      "regex": "^PT([0-9]+H)?([0-9]+M)?$"
+    },
+    "cookTime": {
+      "type": "string",
+      "regex": "^PT([0-9]+H)?([0-9]+M)?$"
+    },
+    "totalTime": {
+      "type": "string",
+      "regex": "^PT([0-9]+H)?([0-9]+M)?$"
+    },
+    "recipeYield": {
+      "type": "string",
+      "required": true
+    },
+    "servings": {
+      "type": "integer",
+      "min": 1
+    },
+    "recipeCategory": {
+      "type": "string"
+    },
+    "recipeCuisine": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": ["easy", "medium", "hard"],
+      "default": "medium"
+    },
+    "recipeIngredient": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.ingredient",
+      "required": true
+    },
+    "recipeInstructions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recipe.instruction",
+      "required": true
+    },
+    "nutrition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recipe.nutrition"
+    },
+    "aggregateRating": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recipe.rating"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recipe.video"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "recipes"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "recipes"
+    }
+  }
+}

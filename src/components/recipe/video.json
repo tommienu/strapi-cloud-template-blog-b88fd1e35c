@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_recipe_videos",
+  "info": {
+    "displayName": "Recipe Video",
+    "icon": "play",
+    "description": "Video information for recipe (Google Recipe schema compliant)"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "thumbnailUrl": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "contentUrl": {
+      "type": "string",
+      "required": true
+    },
+    "embedUrl": {
+      "type": "string",
+      "required": false
+    },
+    "uploadDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true,
+      "regex": "^PT([0-9]+H)?([0-9]+M)?([0-9]+S)?$"
+    },
+    "interactionCount": {
+      "type": "integer",
+      "required": false,
+      "min": 0
+    },
+    "expires": {
+      "type": "datetime",
+      "required": false
+    }
+  }
+}

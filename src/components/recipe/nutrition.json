@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_recipe_nutrition",
+  "info": {
+    "displayName": "Nutrition Information",
+    "icon": "heart",
+    "description": "Nutritional information for recipe (Google Recipe schema compliant)"
+  },
+  "options": {},
+  "attributes": {
+    "calories": {
+      "type": "string",
+      "required": false
+    },
+    "protein": {
+      "type": "string",
+      "required": false
+    },
+    "carbohydrates": {
+      "type": "string",
+      "required": false
+    },
+    "fat": {
+      "type": "string",
+      "required": false
+    },
+    "fiber": {
+      "type": "string",
+      "required": false
+    },
+    "sugar": {
+      "type": "string",
+      "required": false
+    },
+    "sodium": {
+      "type": "string",
+      "required": false
+    },
+    "cholesterol": {
+      "type": "string",
+      "required": false
+    },
+    "saturatedFat": {
+      "type": "string",
+      "required": false
+    },
+    "unsaturatedFat": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

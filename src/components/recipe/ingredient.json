@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_recipe_ingredients",
+  "info": {
+    "displayName": "Recipe Ingredient",
+    "icon": "restaurant",
+    "description": "Single recipe ingredient as string (Google Recipe schema compliant)"
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
