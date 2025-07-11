@@ -61,7 +61,10 @@
       "min": 1
     },
     "recipeCategory": {
-      "type": "string"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe-category.recipe-category",
+      "inversedBy": "recipes"
     },
     "recipeCuisine": {
       "type": "string"

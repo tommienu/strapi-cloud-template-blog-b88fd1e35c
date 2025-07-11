@@ -541,6 +541,39 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiRecipeCategoryRecipeCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'recipe_categories';
+  info: {
+    description: 'Organize recipes into categories (dinner, dessert, breakfast, etc.)';
+    displayName: 'Recipe Category';
+    pluralName: 'recipe-categories';
+    singularName: 'recipe-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::recipe-category.recipe-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    recipes: Schema.Attribute.Relation<'oneToMany', 'api::recipe.recipe'>;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
   collectionName: 'recipes';
   info: {
@@ -581,7 +614,10 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
     nutrition: Schema.Attribute.Component<'recipe.nutrition', false>;
     prepTime: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    recipeCategory: Schema.Attribute.String;
+    recipeCategory: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::recipe-category.recipe-category'
+    >;
     recipeCuisine: Schema.Attribute.String;
     recipeIngredient: Schema.Attribute.Component<'recipe.ingredient', true> &
       Schema.Attribute.Required;
@@ -1119,6 +1155,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::recipe-category.recipe-category': ApiRecipeCategoryRecipeCategory;
       'api::recipe.recipe': ApiRecipeRecipe;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

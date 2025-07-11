@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipe_categories",
+  "info": {
+    "singularName": "recipe-category",
+    "pluralName": "recipe-categories",
+    "displayName": "Recipe Category",
+    "description": "Organize recipes into categories (dinner, dessert, breakfast, etc.)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "recipeCategory"
+    }
+  }
+}
