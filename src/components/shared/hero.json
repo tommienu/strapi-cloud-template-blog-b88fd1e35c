@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_heros",
+  "info": {
+    "displayName": "Hero",
+    "icon": "heading",
+    "description": "A hero section with title, subtitle, and up to two CTAs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "cta_primary": {
+      "type": "component",
+      "component": "shared.cta",
+      "required": false
+    },
+    "cta_secondary": {
+      "type": "component",
+      "component": "shared.cta",
+      "required": false
+    }
+  }
+}

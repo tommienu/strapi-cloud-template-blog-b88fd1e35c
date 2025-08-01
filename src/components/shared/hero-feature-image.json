@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_shared_hero_feature_images",
+  "info": {
+    "displayName": "Hero Feature Image",
+    "icon": "image",
+    "description": "A hero section with title, description, image, and feature checkboxes"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "feature_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.feature-item",
+      "max": 3,
+      "min": 0
+    },
+    "cta_primary": {
+      "type": "component",
+      "component": "shared.cta",
+      "required": false
+    },
+    "cta_secondary": {
+      "type": "component",
+      "component": "shared.cta",
+      "required": false
+    }
+  }
+}

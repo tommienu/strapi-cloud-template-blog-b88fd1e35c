@@ -602,7 +602,7 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
       }>;
     difficulty: Schema.Attribute.Enumeration<['easy', 'medium', 'hard']> &
       Schema.Attribute.DefaultTo<'medium'>;
-    images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images', true>;
     keywords: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

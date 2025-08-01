@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_feature_items",
+  "info": {
+    "displayName": "Feature Item",
+    "icon": "check-circle",
+    "description": "A feature item with a checkbox and text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "is_checked": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
