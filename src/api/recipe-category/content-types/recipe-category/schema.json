@@ -23,6 +23,11 @@
     "description": {
       "type": "text"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "recipes": {
       "type": "relation",
       "relation": "oneToMany",

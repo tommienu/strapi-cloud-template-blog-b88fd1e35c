@@ -108,12 +108,6 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "recipes"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "recipes"
     }
   }
 }
